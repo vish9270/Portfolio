@@ -1,8 +1,8 @@
-const express = require('express')
-const app = express()
+var express = require('express');
+var app = express();
 const PORT=process.env.PORT || 3000;
-app.use(function(req,res,next){
-  if(req.headers['x-forwaded-porto']=='http'){
+app.use(function(req, res, next){
+  if(req.headers['x-forwaded-proto']=='http'){
     next();
   }
   else{
