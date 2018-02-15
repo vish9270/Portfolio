@@ -2,11 +2,7 @@ const express = require('express')
 const app = express()
 const PORT= process.env.PORT ||2000;
 app.use(function(req, res, next){
-  if(req.headers['x-forwaded-proto'] =='http'){
-    next();
-  }else{
-    res.redirect('http://' +req.hostname +req.url);
-  }
+next();
 });
 app.use(express.static('public'));
 
